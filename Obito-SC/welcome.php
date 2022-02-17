@@ -605,6 +605,10 @@ html, body {
     margin-bottom:10px; 
 }
 
+.mtp1{
+    margin-left:20px;
+}
+
 .uiux-side.split-pane button:hover, .split-pane a.button:hover {
   color: violet;
 }
@@ -1742,53 +1746,26 @@ input[type="file"] {
      
      
   <!-- This is an example component -->
-<div class=" bg-white">
+<div class=" bg-gray-100">
     
     
     
     
     <aside>
-  <div class="px-4 py-16 mx-auto max-w-screen-2xl sm:px-6 lg:px-8">
+  <div class=" mx-auto max-w-screen-2xl sm:px-6 lg:px-8">
       
       
       
     <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div class=" sm:col-span-2 ">
         
-      <div class="p-8 text-center rc text-white bg-gray-100 sm:col-span-2 sm:p-16 ">
-        <div class="max-w-lg mx-auto space-y-8">
-               <img src="https://i.imgur.com/7qszumI.png" />
-     
-
-
-
-
-<div class="bg-white rounded-xl rc p-4 shadow-xl mt-4">
-                                    <div class="flex flex-col justify-center items-center">
-                                         <div id="qrcode" style="width:200px; height:200px; margin-top:15px;"></div>
-                                    </div><br/>
-                                   
-                                   
-                                    <div class="flex space-x-2 text-gray-400 items-center mt-2">
-                                  
-                                    </div> <p class="text-gray-600  w-80 text-sm">Type Text and Hit Enter to Generate your custom QR Code</p>
-                                </div>
-
- <input id="text" type="text" value="https://obito.ml/" style="height:50px; width:90%; color: black"  class="bs3 rc " />
-
-
-
-
- 
-        </div>
-      </div>
-
-   
-   <article class="p-4 bg-gray-800 bs rc border border-gray-700 rounded-xl">
+        
+         <article class="p-4 bg-gray-800 mtp1 rc border border-gray-700 rounded-xl">
   <div class="flex items-center">
     <img src="https://i.gifer.com/origin/72/725ec393b9e3d90f2b3606a1291c77d9_w200.gif"  class="w-16 h-16 rounded-full" />
 
     <div class="ml-3">
-      <h5 class="text-lg font-medium text-white">Miscellaneous STUFF 🍃</h5>
+      <h5 class="text-lg font-medium text-white">Miscellaneous / Under Development 🍃</h5>
       
       <div class="flow-root">
 
@@ -1857,6 +1834,20 @@ input[type="file"] {
       </a>
     </li>
     
+     <li>
+      <a
+        href='https://obito.ml/proxy'
+        target="_blank"
+        class="block h-full p-4 border border-gray-700  hover:border-pink-600"
+      >
+        <h5 class="font-medium text-white">Proxy - Unlock The Web!</h5>
+
+        <p class="mt-1 text-xs font-medium text-gray-300">
+          Unblock any website which is Blocked by Govt. or ISP :)
+        </p>
+      </a>
+    </li>
+    
     
 
  <!--   <li>
@@ -1874,94 +1865,47 @@ input[type="file"] {
     </li> -->
   </ul>
 </article>
-   
-   
-   
-    <div class="w-full max-w-2xl mx-auto bg-white shadow-lg rounded-sm rc border border-gray-200">
-            <header class="px-5 py-4 border-b border-gray-100">
-                <h2 class="font-semibold text-gray-800">Under Development..</h2><hr/>
-              
-            </header>
-            <div class="p-3">
-                <div class="overflow-x-auto">
-                    <table class="table-auto w-full">
-                        <thead class="text-xs font-semibold uppercase text-gray-400 bg-gray-50">
-                            <tr>
-                                <th class="p-2 whitespace-nowrap">
-                                    <div class="font-semibold text-left">Name</div>
-                                </th>
-                                <th class="p-2 whitespace-nowrap">
-                                    <div class="font-semibold text-left">Alpha Feature</div>
-                                </th>
-                               
-                            </tr>
-                        </thead>
-                        <tbody class="text-sm divide-y divide-gray-100">
-                            <tr>
-                                <td class="p-2 whitespace-nowrap">
-                                    <div class="flex items-center">
-                                        <div class="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3"><img class="rounded-full" src="https://cdn1.iconfinder.com/data/icons/files-documents-14/24/expand-file-512.png" width="40" height="40" alt="Alex Shatov"></div>
-                                        <div class="font-medium text-gray-800">PHP Unzipper</div>
-                                    </div>
-                                </td>
-                                <td class="p-2 whitespace-nowrap">
-                                    <div class="text-left">Download .PHP</div>
-                                </td>
-                            
-                            </tr>
-                           <tr>
-                                <td class="p-2 whitespace-nowrap">
-                                    <div class="flex items-center">
-                                        <div class="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3"><img class="" src="https://i.pinimg.com/originals/8f/c3/7b/8fc37b74b608a622588fbaa361485f32.png" width="40" height="40" alt="Philip Harbach"></div>
-                                        <div class="font-medium text-gray-800">O-Mailerv2</div>
-                                    </div>
-                                </td>
-                                <td class="p-2 whitespace-nowrap">
-                                    <div class="text-left">Show Me..!</div>
-                                </td>
-                     
-                            </tr>
-                             <tr>
-                                <td class="p-2 whitespace-nowrap">
-                                    <div class="flex items-center">
-                                        <div class="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3"><img class="" src="https://cdn4.iconfinder.com/data/icons/smart-home-39/128/Artboard_3-512.png" width="40" height="40" alt="Mirko Fisuk"></div>
-                                        <div class="font-medium text-gray-800">Proxy Unblocker</div>
-                                    </div>
-                                </td>
-                                <td class="p-2 whitespace-nowrap">
-                                    <div class="text-left">Unlock The Web!</div>
-                                </td>
-                       
-                            </tr>
-                           <!-- <tr>
-                                <td class="p-2 whitespace-nowrap">
-                                    <div class="flex items-center">
-                                        <div class="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3"><img class="rounded-full" src="https://raw.githubusercontent.com/cruip/vuejs-admin-dashboard-template/main/src/images/user-36-08.jpg" width="40" height="40" alt="Olga Semklo"></div>
-                                        <div class="font-medium text-gray-800">Olga Semklo</div>
-                                    </div>
-                                </td>
-                                <td class="p-2 whitespace-nowrap">
-                                    <div class="text-left">olga.s@cool.design</div>
-                                </td>
-                        
-                            </tr>
-                            <tr>
-                                <td class="p-2 whitespace-nowrap">
-                                    <div class="flex items-center">
-                                        <div class="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3"><img class="rounded-full" src="https://raw.githubusercontent.com/cruip/vuejs-admin-dashboard-template/main/src/images/user-36-09.jpg" width="40" height="40" alt="Burak Long"></div>
-                                        <div class="font-medium text-gray-800">Burak Long</div>
-                                    </div>
-                                </td>
-                                <td class="p-2 whitespace-nowrap">
-                                    <div class="text-left">longburak@gmail.com</div>
-                                </td>
-                       
-                            </tr> -->
-                        </tbody>
-                    </table>
-                </div>
-            </div>
+</br></br>
+</div>
+
+
+
+
+
+      <div class="p-8 text-center rc text-white bg-gray-100 sm:col-span-2 sm:p-16 ">
+        <div class="max-w-lg mx-auto space-y-8">
+               <img src="https://i.imgur.com/7qszumI.png" />
+     
+
+
+
+
+<div class="bg-white rounded-xl rc p-4 shadow-xl mt-4">
+                                    <div class="flex flex-col justify-center items-center">
+                                         <div id="qrcode" style="width:200px; height:200px; margin-top:15px;"></div>
+                                    </div><br/>
+                                   
+                                   
+                                    <div class="flex space-x-2 text-gray-400 items-center mt-2">
+                                  
+                                    </div> <p class="text-gray-600  w-80 text-sm">Type Text and Hit Enter to Generate your custom QR Code</p>
+                                </div>
+
+ <input id="text" type="text" value="https://obito.ml/" style="height:50px; width:90%; color: black"  class="bs3 rc " />
+
+
+
+
+ 
         </div>
+      </div>
+
+   
+  
+   
+   
+   
+    
    
     </div>
   </div>
