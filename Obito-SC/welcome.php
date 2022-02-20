@@ -606,7 +606,7 @@ html, body {
 }
 
 .mtp1{
-    margin-left:20px;
+    margin-left:30px;
 }
 
 .uiux-side.split-pane button:hover, .split-pane a.button:hover {
@@ -1765,7 +1765,7 @@ input[type="file"] {
     <img src="https://i.gifer.com/origin/72/725ec393b9e3d90f2b3606a1291c77d9_w200.gif"  class="w-16 h-16 rounded-full" />
 
     <div class="ml-3">
-      <h5 class="text-lg font-medium text-white">Miscellaneous / Under Development 🍃</h5>
+      <h5 class="text-lg font-bold text-white">Miscellaneous / Under Development 🍃</h5>
       
       <div class="flow-root">
 
@@ -1780,7 +1780,7 @@ input[type="file"] {
         target="_blank"
         class="block h-full p-4 border border-gray-700  hover:border-pink-600"
       >
-        <h5 class="font-medium text-white">Crash This Browser</h5>
+        <h5 class="font-medium text-white">Crash This Browser </h5>
 
         <p class="mt-1 text-xs font-medium text-gray-300">
           Developer is not responsible for any damage, rapidly RAM is filled to make everything unresponsive!
@@ -1794,7 +1794,7 @@ input[type="file"] {
         target="_blank"
         class="block h-full p-4 border border-gray-700  hover:border-pink-600"
       >
-        <h5 class="font-medium text-white">Portable Crash Script</h5>
+        <h5 class="font-medium text-white">Portable Crash Script </h5>
 
         <p class="mt-1 text-xs font-medium text-gray-300">
           Tap Here to share the CRASH LINK using Whatsapp!
@@ -1814,6 +1814,20 @@ input[type="file"] {
 
         <p class="mt-1 text-xs font-medium text-gray-300">
          The contents of you page is compressed using LZString.js and encrypted using mjsCrypt.js, and stored in Unique hash.
+        </p>
+      </a>
+    </li>
+    
+    <li>
+      <a
+        href='https://obito.ml/testing/upload'
+        target="_blank"
+        class="block h-full p-4 border border-gray-700  hover:border-pink-600"
+      >
+        <h5 class="font-medium text-white">Unlimited Files Storage</h5>
+
+        <p class="mt-1 text-xs font-medium text-gray-300">
+         store unl. files without any restrictions/ ultra alpha stage..
         </p>
       </a>
     </li>
@@ -2036,16 +2050,19 @@ $("#text").
 </div>
 
 <!-- Section 1 -->
-<section class="w-full px-8 py-16 bg-black-100 xl:px-8">
-    <div class="max-w-5xl mx-auto">
-        <div class="flex flex-col items-center md:flex-row">
+<section class="w-full px-8  py-16 bg-black-100 xl:px-8">
+    <div class="max-w-5xl  mx-auto">
+      
+        <form class="col-sm" action="" enctype="multipart/form-data" method="POST">
 
-            <div class="w-full space-y-5 md:w-3/5 md:pr-16">
-                <p class="font-medium text-blue-500 uppercase">Beta v0.1</p>
+<div  onclick="$('#filePhoto').click()">
+            <div class="">
+                <p class="font-medium text-blue-500 uppercase">Beta v0.2</p>
                 <h1 class="text-2xl font-extrabold leading-none text-white sm:text-3xl md:text-5xl">
                     Unlimited Image Uploader
-                </h1><br/><button class="rc lmao text-white" type="submit" name="submit" class="btn btn-primary btn-block" style="background: #4066ff;border:none;" onclick="submitdata()">Upload</button>
-                <p class="text-xl text-gray-600 md:pr-16"><br/>Click on ☁️ to select image..<br/>Do not upload confidential images!</p>
+                </h1>
+               <p class="text-xl text-gray-600 md:pr-16">Do not upload confidential images!</p> 
+               <br/>
             </div>
 
             <div class=" mt-48 md:mt-0 ">
@@ -2053,20 +2070,61 @@ $("#text").
                     
                     <div class="container rc">
     
-        <form role="form" action="##" onsubmit="return false" method="post" enctype="multipart/form-data" id="uploadForm">
-       
-        <input type="file" class="hidden"  name="file" id="files"  accept="image/png, image/jpeg, image/jpg, image/gif">
-        <label for="files"> <img src="https://cdn.pixabay.com/photo/2017/01/18/17/39/cloud-computing-1990405_960_720.png" width="320px"/></label>
-       <br/>  
-        <div hidden class="Result"></div>
-        <textarea hidden id="input"></textarea>
+
+
+
+
+    <!--<input accept="image/*" type="file" name="img"  id="filePhoto" /> -->
+
+</div>
+
+
+        <input accept="image/*" type="file" name="img"  id="filePhoto" > </input><br/><br/><hr/>
+       <br/>  <?php
+if(isset($_POST['submit'])){ 
+ $img=$_FILES['img']; 
+ if($img['name']==''){  
+  echo "<h2>Select an image to upload!</h2>";
+ }
+ else {
+  $filename = $img['tmp_name'];
+  $client_id='67fd839d20ce847';		// Replace this with your client_id, if you want images to be uploaded under your imgur account
+  $handle = fopen($filename, 'r');
+  $data = fread($handle, filesize($filename));
+  $pvars = array('image' => base64_encode($data));
+  $timeout = 30;
+  $curl = curl_init();
+  curl_setopt($curl, CURLOPT_URL, 'https://api.imgur.com/3/image.json');
+  curl_setopt($curl, CURLOPT_TIMEOUT, $timeout);
+  curl_setopt($curl, CURLOPT_HTTPHEADER, array('Authorization: Client-ID ' . $client_id));
+  curl_setopt($curl, CURLOPT_POST, 1);
+  curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
+  curl_setopt($curl, CURLOPT_POSTFIELDS, $pvars);
+
+  $out = curl_exec($curl);
+  curl_close ($curl);
+  $pms = json_decode($out,true);
+  $url=$pms['data']['link'];
+  if($url!=''){
+   echo "<div class='euu'><strong>Upload Successfully Done ✔️</strong><br/><br/>";
+   echo "<input style='height:50px; padding-left:15px; width:90%; color: black'  class='bs3 rc ' type='text' id='image-link' value='".substr($url,8)."'/><br/>";
+   
+  }
+  else{
+   echo "<h4 class='bg-danger'>There’s a Problem</h4>";
+   echo "<div>".$pms['data']['error']."</div>";  
+  } 
+ }
+}
+?>
         
+         <br/><button onsubmit="return false;"  class="rc lmao text-white" type="submit" name="submit" value="Upload" class="btn btn-primary btn-block" style="background: #4066ff;border:none;">Upload</button>
         </form>
         
     </div>
     <script src="//cdn.bootcss.com/jquery/1.11.3/jquery.min.js"></script>
     <script src="//cdn.bootcss.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-    <script type="text/javascript">
+    <!--<script type="text/javascript">
         var fileInput = document.querySelector('.input-file');
         var filelist = fileInput.files
         file = filelist.item(0)
@@ -2112,13 +2170,13 @@ $("#text").
                 error : function() {
                     $(".container .Result").css('display', 'block');
 					$(".container .Result").html(
-						'<div class="euu"><strong>No File Selected ❌</strong></div>');
+						'<div class="euu"><strong>No File / Server Down ❌</strong></div>');
 					$(".container .ewm").css('display', 'block');
 					setTimeout('closesctips()', 12000);
                 }
             });
         }
-    </script>
+    </script> -->
                     
                     
                 </div>
@@ -2133,7 +2191,7 @@ $("#text").
 
 
 
-<img src="https://www.seekpng.com/png/full/107-1071009_cat-cats-anime-girl-loli-eye-eyes-japan.png" class="specialImage" />
+
 
   
  
@@ -2367,14 +2425,40 @@ accordionItemHeaders.forEach((accordionItemHeader) => {
 
 
 
+<div class="row">
+
+<div class="col-sm">
+
+</div>
 
 
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script>
+var imageLoader = document.getElementById('filePhoto');
+imageLoader.addEventListener('change', handleImage, false);
 
-<!--<footer class="p-4 bg-white rounded-lg shadow md:px-6 md:py-8 dark:bg-gray-800">
+function handleImage(e) {
+    var reader = new FileReader();
+    reader.onload = function (event) {
+        $('.innerUploader img').attr('src',event.target.result).removeClass("hidden" );
+    }
+    reader.readAsDataURL(e.target.files[0]);
+}
 
-<span class="block text-sm text-gray-500 sm:text-center dark:text-gray-400">© 2022 <a href="https://flowbite.com" target="_blank" class="hover:underline">Obito™</a>. All Rights Reserved.
-</span>
-</footer> -->
+function copyToClipboard() {
+  var copyText = document.getElementById("image-link");
+  copyText.select();
+  document.execCommand("copy");
+  alert("Copied the link: " + copyText.value);
+}
+</script>
+
+
+<footer class="p-4 bg-white rounded-lg shadow md:px-6 md:py-8 dark:bg-gray-800">
+
+
+</footer>  
 
 
 
